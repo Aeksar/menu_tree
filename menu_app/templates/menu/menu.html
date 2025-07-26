@@ -1,0 +1,10 @@
+<ul>
+{% for node in menu_tree %}
+    <li>
+        <a href="{{ node.item.get_url }}" {% if node.is_active %}class="active"{% endif %}>{{ node.item.name }}</a>
+        {% if node.children and node.show_children %}
+            {% include "menu/menu.html" with menu_tree=node.children %}
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>

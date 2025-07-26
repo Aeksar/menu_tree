@@ -1,0 +1,12 @@
+{% load menu_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Menu</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>Текущий URL: {{ request.path }}</p>
+    {% draw_menu 'main_menu' %}
+</body>
+</html>
